@@ -20,14 +20,15 @@ Google Plus API
 
 create a file named client_secrets.json, containing:
 
-> {
->  "installed": {
->    "client_id": "*****.apps.googleusercontent.com",   
->    "client_secret":"*****",
->    "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob"],
->    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
->    "token_uri": "https://accounts.google.com/o/oauth2/token"
->    }
-> }
-
+```
+ {
+  "installed": {
+  "client_id": "*****.apps.googleusercontent.com",   
+  "client_secret":"*****",
+  "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob"],
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token"
+  }
+}
+```
 

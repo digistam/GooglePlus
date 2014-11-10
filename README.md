@@ -18,4 +18,14 @@ Google Plus API
 * Select the appropriate kind of key: Server key, Browser key, Android key, or iOS key
 * click Create
 
- 
+create a file named client_secrets.json, containing:
+
+{
+>  "installed": {
+    "client_id": "*****.apps.googleusercontent.com",
+    "client_secret":"*****",
+    "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob"],
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token"
+  }
+}

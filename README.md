@@ -31,4 +31,5 @@ create a file named client_secrets.json, containing:
   }
 }
 ```
+You get the ***** details from from the Google Developers Console.
 

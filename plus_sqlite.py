@@ -123,7 +123,7 @@ def main(argv):
         table = "CREATE TABLE IF NOT EXISTS stream (id INTEGER PRIMARY KEY AUTOINCREMENT,provider TEXT, published TEXT, title TEXT, url TEXT, verb TEXT, actor_id TEXT, actor_displayname TEXT, actor_image TEXT, actor_familyname TEXT, actor_givenname TEXT, actor_url TEXT, address TEXT, etag TEXT, geocode TEXT, post_id TEXT, post_kind TEXT, attachment TEXT, attachment_image_url TEXT, attachment_objecttype TEXT,attachment_url TEXT,content TEXT,object_type TEXT,place_id TEXT,place_name TEXT)"
         c.execute(table)
         #_keyword = sys.argv[1].replace(' ','+')
-        _keyword = 'demo'
+        _keyword = 'politie'
         #headers = ['source','published','title','url','type','id','actor','image','','','','etag','','','','','','content','kind','weblink','','objecttype']
       
         activities_resource = service.activities()
@@ -157,6 +157,8 @@ def main(argv):
             print "---Done"
 
         if len(activities) > 0:
+            myfile = open('c:\\temp\\test.csv', 'wb')
+            wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
             for item in activities:
                 row = []
                 # 1 provider
@@ -249,8 +251,11 @@ def main(argv):
                     row.append('')
                 #print '-----------'
                 #writer.writerow(row)
+                wr.writerow(row)
                 dict.append(row)
                 #print dict
+
+
 
         sql = "INSERT INTO stream (provider, published, title, url, verb, actor_id, actor_displayname, actor_image, actor_familyname, actor_givenname, actor_url, address, etag, geocode, post_id, post_kind, attachment, attachment_image_url, attachment_objecttype,attachment_url,content,object_type,place_id,place_name) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" #% _event_id
         c.executemany(sql, dict)
